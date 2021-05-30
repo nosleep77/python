@@ -1,3 +1,4 @@
+'''
 def valid_parentheses(string):
     
     open = "("
@@ -36,9 +37,7 @@ def valid_parentheses(string):
                 return False
         
     return True
-
-        
-print(valid_parentheses("gomge)hrp(gtvatsagi)(l(xsjex)a)rlyv(()nmynpl"))
+'''
 
 
 ## better version
@@ -49,3 +48,7 @@ def valid_parentheses(string):
         if char == ')': cnt -= 1
         if cnt < 0: return False
     return True if cnt == 0 else False
+
+#print(valid_parentheses("gomge)hrp(gtvatsagi)(l(xsjex)a)rlyv(()nmynpl"))
+print(valid_parentheses(")test("))
+
