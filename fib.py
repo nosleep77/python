@@ -1,4 +1,4 @@
-
+'''
 def get_fib(n):
 
   a = [1,1]
@@ -8,5 +8,21 @@ def get_fib(n):
 
   print(a)
   return a[n-1]
+'''
 
-print(get_fib(3))
+def get_fib(n):
+
+  a = 0
+  b = 1
+
+  for i in range(n):
+    a, b = b, a+b
+    
+  yield a
+
+
+n = 20
+
+for i in range(n):
+  print(f"{i}: {list(get_fib(i))}")
+

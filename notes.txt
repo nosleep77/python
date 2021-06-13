@@ -121,16 +121,19 @@ n = [4,3,2,1]
 print(reduce(lambda x,y: x*y, n))
 
 
+list1 = [1,2,3,4,5,6,7,8,9]
+[ x for x in list1 if x%2 == 1 ]
+[ x for x in list1 for b in list1 if x%2==0 ]
+[ b for x in list1 for b in list1 if x%2==0 ]
 
 
-1, 1, 2, 3, 5, 6, 11
+def f(*args):
+  b = 0
+  for a in args:
+    b += a
+  return b
 
-a = [1,1]
-
-get_fib(1):
-
-  for i in range(n):
-    a.append(a[-1] + a[-2])
+print(f(12,4))
 
 
 
