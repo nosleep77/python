@@ -28,12 +28,57 @@ dir.replace("NORTH SOUTH",'').replace("SOUTH NORTH",'').replace("EAST WEST",'').
 ["WEST"]
 
 
-list comprehension
-lambda
-filter
-map
-reduce
+comprehension
+list, dict, set, generator
 
+lambda
+
+filter, map, reduce
+
+zip and unzip
+collections
+https://book.pythontips.com/en/latest/collections.html
+
+intertools
+
+exception handling
+
+debugging
+
+
+file manipulation
+https://book.pythontips.com/en/latest/open_function.html
+
+generators
+coroutines
+https://book.pythontips.com/en/latest/coroutines.html
+
+
+enumerate
+https://book.pythontips.com/en/latest/enumerate.html
+
+data structures
+decorators
+
+function caching
+https://book.pythontips.com/en/latest/function_caching.html
+
+
+context managers
+https://book.pythontips.com/en/latest/context_managers.html
+
+web scraping (beautiful soup)
+
+
+webdev
+rest API 
+flask / django
+jinja2 templating
+
+ML/AI
+sci-kit / tensorflow
+
+OOP
 
 
 
@@ -126,6 +171,16 @@ list1 = [1,2,3,4,5,6,7,8,9]
 [ x for x in list1 for b in list1 if x%2==0 ]
 [ b for x in list1 for b in list1 if x%2==0 ]
 
+[ item for item in list1 if item%2==1 ]
+
+
+dic1 = {
+  "key1": "value1",
+  "key2": "value2",
+}
+
+{ key:value for (key,value) in dic1.items() }
+
 
 def f(*args):
   b = 0
@@ -136,7 +191,10 @@ def f(*args):
 print(f(12,4))
 
 
-
+list1 = [1,2,3,4,5,6,7,8,9]
+list1 = [1,2,3,4]
+from functools import reduce
+reduce(lambda x,y: x+y, list1)
 
 
 

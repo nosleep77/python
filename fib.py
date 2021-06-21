@@ -18,11 +18,11 @@ def get_fib(n):
   for i in range(n):
     a, b = b, a+b
     
-  yield a
+  yield b
 
 
 n = 20
 
-for i in range(n):
+for i in range(n+1):
   print(f"{i}: {list(get_fib(i))}")
 
