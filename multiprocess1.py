@@ -15,6 +15,8 @@ for i in range(num_processes):
   p = Process(target=square_numbers)
   processes.append(p)
 
+print(f"p looks like {p}")
+
 # start
 for p in processes:
   p.start()

@@ -1,32 +1,5 @@
 
 
-input
-s="aaabbbbhaijjjm"
-output (how many letters beyond a-m)
-error_printer(s) => "0/14"
-
-input
-s="aaaxbbbbyyhwawiwjjjwwm"
-output (how many letters beyond a-m)
-error_printer(s) => "8/22"
-
-if a not in 
-
-
-
-arr = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
-
-pop - by index
-remove - first instance of item
-
-# pop a pair after convert to string
-dir.replace("NORTH SOUTH",'')
-
-dir.replace("NORTH SOUTH",'').replace("SOUTH NORTH",'').replace("EAST WEST",'').replace("WEST EAST",'')
-["SOUTH", "NORTH", "WEST"]
-dir.replace("NORTH SOUTH",'').replace("SOUTH NORTH",'').replace("EAST WEST",'').replace("WEST EAST",'')
-["WEST"]
-
 
 comprehension
 list, dict, set, generator
@@ -35,16 +8,58 @@ lambda
 
 filter, map, reduce
 
+
+###################################
 zip and unzip
+
+names = ['john', 'paul', 'dave']
+comps = ['small', 'medium', 'large']
+age = [72, 34, 67]
+
+>>> list(zip(names,comps,age))    
+[('john', 'small', 72), ('paul', 'medium', 34), ('dave', 'large', 67)]
+
+>>> list(zip(names,comps))
+[('john', 'small'), ('paul', 'medium'), ('dave', 'large')]
+
+first_name = ['Joe','Earnst','Thomas','Martin','Charles']
+last_name = ['Schmoe','Ehlmann','Fischer','Walter','Rogan','Green']
+age = [23, 65, 11, 36, 83]
+
+for first_name, last_name, age in zip(first_name, last_name, age):
+    print(f"{first_name} {last_name} is {age} years old")
+
+# Output
+#
+# Joe Schmoe is 23 years old
+# Earnst Ehlmann is 65 years old
+# Thomas Fischer is 11 years old
+# Martin Walter is 36 years old
+# Charles Rogan is 83 years old
+
+
+
+
+
 collections
 https://book.pythontips.com/en/latest/collections.html
+- defaultdict
+- ordereddict
+- counter
+- deque
+- namedtuple
+- enum.Enum
+
 
 intertools
 
+file operations
+https://book.pythontips.com/en/latest/open_function.html
+
 exception handling
+https://book.pythontips.com/en/latest/exceptions.html
 
 debugging
-
 
 file manipulation
 https://book.pythontips.com/en/latest/open_function.html
@@ -59,6 +74,7 @@ https://book.pythontips.com/en/latest/enumerate.html
 
 data structures
 decorators
+https://book.pythontips.com/en/latest/decorators.html
 
 function caching
 https://book.pythontips.com/en/latest/function_caching.html
@@ -82,38 +98,14 @@ OOP
 
 
 
-lambda x: x+5
-
-def func(x):
- return x+5
-
-authors = ["Isaac Asimov", "Ray Bradbury", "Robert Heinlein", "Arthur C. Clarke", "Frank Herbert", "Orson Scott Card", "Douglas Adams", "H. G. Wells", "Leigh Brackett"]
-
-newList = []
-
-for a in authors:
- newList.append(a.split(" ")[-1].lower())
- 
-newList.sort()
 
 
 
-list1 = [1,2,3,4,5,6,7,8,9]
-
-#boolean
-list2 = list(map(lambda x: x%2 == 0, list1))
-
-#values
-list2 = list(filter(lambda x: x%2 == 0, list1)) 
-
-get_tens = lambda p: int(p/10)%10
-print(get_tens(749))
 
 
 
-list1 = [('eggs', 5.25), ('honey',9.70), ('carrots',1.10), ('peaches',2.45)]
-list1.sort(key = lambda x: x[0])
-print(list1)
+
+
 
 
 
@@ -195,6 +187,91 @@ list1 = [1,2,3,4,5,6,7,8,9]
 list1 = [1,2,3,4]
 from functools import reduce
 reduce(lambda x,y: x+y, list1)
+
+
+
+
+# itertools
+# product, permutations, combinations, accumulate, groupby, infinite iterators
+
+# cartesian product
+
+'''
+from itertools import product
+
+a = [1,2]
+b = [3,4]
+
+prod = product(a,b, repeat=2)
+print(list(prod))
+'''
+
+'''
+from itertools import permutations
+a = [1,2,3]
+perm = permutations(a, 3)
+print(list(perm))
+'''
+
+'''
+from itertools import combinations, combinations_with_replacement
+a = [1,2,3,4]
+comb = combinations(a,2)
+print(list(comb))
+comb_wr = combinations_with_replacement(a,2)
+print(list(comb_wr))
+'''
+
+'''
+from itertools import accumulate
+import operator
+a = [1,2,5,3,4]
+# specifying mul it will multiply otherwise default is to add
+acc = accumulate(a, func=operator.mul)
+# this return the max
+acc = accumulate(a, func=max)
+
+print(a)
+print(list(acc))
+'''
+
+'''
+from itertools import groupby
+def smaller_than_3(x):
+  return x < 3
+a = [1,2,3,4]
+#group1 = groupby(a, key=smaller_than_3)
+group1 = groupby(a, key= lambda x: x<3)
+for key, value in group1:
+  print(key, list(value))
+'''
+
+'''
+from itertools import count,cycle,repeat
+
+# infinite loop starts at 1
+for i in count(1):
+  print(i)
+
+a = [1,2,3,4]
+for i in cycle(a):
+  print(i)
+
+for i in repeat(1, 4):
+  print(i)
+'''
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -53,21 +53,17 @@ for key, value in group1:
   print(key, list(value))
 '''
 
+'''
 from itertools import count,cycle,repeat
 
-
-
 # infinite loop starts at 1
-#for i in count(1):
-#  print(i)
-  
-'''
+for i in count(1):
+  print(i)
+
 a = [1,2,3,4]
 for i in cycle(a):
   print(i)
-'''
 
-'''
 for i in repeat(1, 4):
   print(i)
 '''

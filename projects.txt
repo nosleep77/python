@@ -1,0 +1,29 @@
+
+Exception handling to be used in all projects
+All projects to be resource optimized (mem/cpu/disk/network)
+
+Project
+- multi threading / processing
+- file manipulation
+- fast file copy
+- file modification
+
+Project
+- Large data processing
+- Generators and coroutines
+
+Project
+- DBs: mySQL and PostgreSQL
+
+Project
+- web scraping
+
+Project
+- web app
+- rest API
+- jinja2 templating
+- flask
+
+Project
+- sci-kit
+- tensorflow
