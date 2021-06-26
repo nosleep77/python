@@ -22,6 +22,20 @@ list1 = [1,2,3,4,5,6,7,8,9]
 list2 = list(filter(odds, list1))
 print(list2)
 
+
+# using filter with 2 lists
+
+list1 = [0,1,2,3,4,5,6,7,8,9]
+list2 = [7, 8, 9]
+list(filter(lambda x: x in list1, list2))
+
+## pair up items in a list
+zip(list1[::2], list2[1::2])
+
+print([*filter(lambda pair: pair in your_pairs, zip(arr[::2], arr[1::2]))])
+
+
+
 ## use map for actual value
 sq = lambda x: x ** 2
 list1 = [1,2,3,4,5,6,7,8,9]
@@ -208,6 +222,8 @@ https://book.pythontips.com/en/latest/context_managers.html
 queues
 consumers and producers
 
+
+###############################
 multi threading 
 multi processing
 ThreadPoolExecutor
@@ -215,6 +231,11 @@ ProcessPoolExecutor
 asyncio
 https://stackoverflow.com/questions/27435284/multiprocessing-vs-multithreading-vs-asyncio-in-python-3
 https://medium.com/hackernoon/a-simple-introduction-to-pythons-asyncio-595d9c9ecf8c
+
+locking and unlocking
+https://www.educative.io/edpresso/what-are-locks-in-python
+###############################
+
 
 
 logging
@@ -270,9 +291,8 @@ if the bool() of the return value is True, it stays in the filter, otherwise its
 example:
 !e
 x = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 print(*filter(lambda i: i % 2 == 0, x))
-
+# output
 2 4 6 8 10
 
 
