@@ -237,25 +237,22 @@ https://www.educative.io/edpresso/what-are-locks-in-python
 ###############################
 
 
-
 logging
-
-sockets
-
-web scraping (beautiful soup)
 
 webdev
 rest API 
 flask / django
 jinja2 templating
 
+web scraping (beautiful soup)
 
 unit testing
 test driven development
 
-
 ML/AI
 sci-kit / tensorflow
+
+sockets
 
 OOP
 

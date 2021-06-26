@@ -2,7 +2,6 @@
 # product, permutations, combinations, accumulate, groupby, infinite iterators
 
 # cartesian product
-
 '''
 from itertools import product
 
@@ -17,6 +16,8 @@ print(list(prod))
 # [(1, 3), (1, 4), (2, 3), (2, 4)]
 '''
 
+
+# permutations
 '''
 from itertools import permutations
 a = [1,2,3]
@@ -29,6 +30,7 @@ print(list(perm))
 '''
 
 
+# combinations
 '''
 from itertools import combinations, combinations_with_replacement
 a = [1,2,3,4]
@@ -43,7 +45,7 @@ print(list(comb_wr))
 '''
 
 
-
+# accumulate
 '''
 from itertools import accumulate
 import operator
@@ -63,6 +65,7 @@ print(list(acc))
 '''
 
 
+# groupby
 '''
 from itertools import groupby
 def smaller_than_3(x):
@@ -82,7 +85,6 @@ for key, value in group1:
 
 
 # from itertools import count,cycle,repeat
-
 '''
  infinite loop starts at 1
 for i in count(1):

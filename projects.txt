@@ -13,17 +13,20 @@ Project
 - Generators and coroutines
 
 Project
-- DBs: mySQL and PostgreSQL
+- working with DBs
+- mySQL and PostgreSQL
 
 Project
 - web scraping
+- data mining
 
 Project
-- web app
+- web apps
 - rest API
 - jinja2 templating
 - flask
 
 Project
+- ML
 - sci-kit
 - tensorflow
