@@ -1,12 +1,79 @@
 
 
 
-comprehension
+comprehensions
 list, dict, set, generator
-
 lambda
-
 filter, map, reduce
+
+
+list1 = [1,2,3,4,5,6,7,8,9]
+list2 = list(filter(lambda x: x%2 == 0, list1))
+IS SAME AS 
+list2 = [*filter(lambda x: x%2 == 0, list1)]
+print(list2)
+
+
+## filter and map will do the interation
+
+## use filter for BOOLEAN return
+odds = lambda x: x%2 == 1
+list1 = [1,2,3,4,5,6,7,8,9]
+list2 = list(filter(odds, list1))
+print(list2)
+
+## use map for actual value
+sq = lambda x: x ** 2
+list1 = [1,2,3,4,5,6,7,8,9]
+list2 = list(map(sq, list1))
+list2 = list(map(lambda x: x ** 2, list1))
+print(list2)
+
+## lambda if boolean
+starts_wtih_J = lambda x: True if x.startswith('J') else False
+
+f = lambda x,y: x+y
+
+mx = lambda x,y: x if x > y else y
+
+n = [4,3,2,1]
+list(map(lambda x: x**2, n))
+OR
+print([x**2 for x in n])
+
+
+n = [4,3,2,1]
+list(filter(lambda x: x>2, n))
+OR
+print([x for x in n if x>2])
+
+
+from functools import reduce
+n = [4,3,2,1]
+print(reduce(lambda x,y: x*y, n))
+
+
+list1 = [1,2,3,4,5,6,7,8,9]
+[ x for x in list1 if x%2 == 1 ]
+[ x for x in list1 for b in list1 if x%2==0 ]
+[ b for x in list1 for b in list1 if x%2==0 ]
+
+list1 = [1,2,3,4,5,6,7,8,9]
+list1 = [1,2,3,4]
+from functools import reduce
+reduce(lambda x,y: x+y, list1)
+
+[ item for item in list1 if item%2==1 ]
+
+
+dic1 = {
+  "key1": "value1",
+  "key2": "value2",
+}
+
+{ key:value for (key,value) in dic1.items() }
+
+
 
 
 ###################################
@@ -38,6 +105,11 @@ for first_name, last_name, age in zip(first_name, last_name, age):
 # Charles Rogan is 83 years old
 
 
+data structures
+- lists
+- tuples
+- sets
+- dicts
 
 collections
 https://book.pythontips.com/en/latest/collections.html
@@ -76,7 +148,8 @@ https://book.pythontips.com/en/latest/exceptions.html
 
 
 
-debugging
+## debugging ##
+pdb
 
 
 ## generators ##
@@ -96,14 +169,30 @@ for i in range(n+1):
 
 
 
-enumerate
+## enumerate ##
 https://book.pythontips.com/en/latest/enumerate.html
 
-data structures
-- lists
-- tuples
-- sets
-- dicts
+>>> my_list = ['apple', 'banana', 'grapes', 'pear']
+>>> for counter, value in enumerate(my_list):
+...  print(counter, value)
+... 
+0 apple
+1 banana
+2 grapes
+3 pear
+
+
+
+## args ##
+def f(*args):
+  b = 0
+  for a in args:
+    b += a
+  return b
+
+print(f(12,4))
+
+
 
 decorators
 https://book.pythontips.com/en/latest/decorators.html
@@ -119,210 +208,35 @@ https://book.pythontips.com/en/latest/context_managers.html
 queues
 consumers and producers
 
-web scraping (beautiful soup)
-
-unit testing
-test driven development
-
 multi threading 
 multi processing
-asyncio
-
 ThreadPoolExecutor
 ProcessPoolExecutor
-
+asyncio
 https://stackoverflow.com/questions/27435284/multiprocessing-vs-multithreading-vs-asyncio-in-python-3
 https://medium.com/hackernoon/a-simple-introduction-to-pythons-asyncio-595d9c9ecf8c
 
 
+logging
+
 sockets
+
+web scraping (beautiful soup)
 
 webdev
 rest API 
 flask / django
 jinja2 templating
 
+
+unit testing
+test driven development
+
+
 ML/AI
 sci-kit / tensorflow
 
 OOP
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-list1 = [1,2,3,4,5,6,7,8,9]
-
-list2 = list(filter(lambda x: x%2 == 0, list1))
-IS SAME AS 
-list2 = [*filter(lambda x: x%2 == 0, list1)]
-
-print(list2)
-
-
-## filter and map will do the interation
-
-## use filter for BOOLEAN return
-odds = lambda x: x%2 == 1
-list1 = [1,2,3,4,5,6,7,8,9]
-list2 = list(filter(odds, list1))
-print(list2)
-
-## use map for actual value
-sq = lambda x: x ** 2
-list1 = [1,2,3,4,5,6,7,8,9]
-list2 = list(map(sq, list1))
-list2 = list(map(lambda x: x ** 2, list1))
-print(list2)
-
-## lambda if boolean
-starts_wtih_J = lambda x: True if x.startswith('J') else False
-
-
-f = lambda x,y: x+y
-
-mx = lambda x,y: x if x > y else y
-
-n = [4,3,2,1]
-list(map(lambda x: x**2, n))
-OR
-print([x**2 for x in n])
-
-
-n = [4,3,2,1]
-list(filter(lambda x: x>2, n))
-OR
-print([x for x in n if x>2])
-
-
-from functools import reduce
-n = [4,3,2,1]
-print(reduce(lambda x,y: x*y, n))
-
-
-list1 = [1,2,3,4,5,6,7,8,9]
-[ x for x in list1 if x%2 == 1 ]
-[ x for x in list1 for b in list1 if x%2==0 ]
-[ b for x in list1 for b in list1 if x%2==0 ]
-
-[ item for item in list1 if item%2==1 ]
-
-
-dic1 = {
-  "key1": "value1",
-  "key2": "value2",
-}
-
-{ key:value for (key,value) in dic1.items() }
-
-
-def f(*args):
-  b = 0
-  for a in args:
-    b += a
-  return b
-
-print(f(12,4))
-
-
-list1 = [1,2,3,4,5,6,7,8,9]
-list1 = [1,2,3,4]
-from functools import reduce
-reduce(lambda x,y: x+y, list1)
-
-
-
-
-# itertools
-# product, permutations, combinations, accumulate, groupby, infinite iterators
-
-# cartesian product
-
-'''
-from itertools import product
-
-a = [1,2]
-b = [3,4]
-
-prod = product(a,b, repeat=2)
-print(list(prod))
-'''
-
-'''
-from itertools import permutations
-a = [1,2,3]
-perm = permutations(a, 3)
-print(list(perm))
-'''
-
-'''
-from itertools import combinations, combinations_with_replacement
-a = [1,2,3,4]
-comb = combinations(a,2)
-print(list(comb))
-comb_wr = combinations_with_replacement(a,2)
-print(list(comb_wr))
-'''
-
-'''
-from itertools import accumulate
-import operator
-a = [1,2,5,3,4]
-# specifying mul it will multiply otherwise default is to add
-acc = accumulate(a, func=operator.mul)
-# this return the max
-acc = accumulate(a, func=max)
-
-print(a)
-print(list(acc))
-'''
-
-'''
-from itertools import groupby
-def smaller_than_3(x):
-  return x < 3
-a = [1,2,3,4]
-#group1 = groupby(a, key=smaller_than_3)
-group1 = groupby(a, key= lambda x: x<3)
-for key, value in group1:
-  print(key, list(value))
-'''
-
-'''
-from itertools import count,cycle,repeat
-
-# infinite loop starts at 1
-for i in count(1):
-  print(i)
-
-a = [1,2,3,4]
-for i in cycle(a):
-  print(i)
-
-for i in repeat(1, 4):
-  print(i)
-'''
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -413,7 +327,8 @@ lists, tuples, filters, maps
 
 
 
-
+arr = ['a', 'b', 'x', 'filler', 'y', 'z', 'i', 'j']
+your_pairs = [('a', 'b'), ('i', 'j')]
 
 now an explanation of why the combination of all of these concepts works:
 [*filter(lambda pair: pair in your_pairs, zip(arr[::2], arr[1::2]))]
@@ -492,37 +407,5 @@ x = [1, 2, 3, 4, 5, 6, 7]
 y = [*filter(lambda i: i%2==0, x)]
 print(y)
 [2, 4, 6]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
