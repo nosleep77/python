@@ -63,7 +63,6 @@ https://book.pythontips.com/en/latest/open_function.html
 
 with open('photo.jpg', 'r+') as f:
     jpgdata = f.read()
-The first argument of open is the filename. The second one (the mode) determines how the file gets opened.
 
 If you want to read the file, pass in r
 If you want to read and write the file, pass in r+
@@ -80,10 +79,21 @@ https://book.pythontips.com/en/latest/exceptions.html
 debugging
 
 
+## generators ##
+lazy iterator that returns one value and ends
+used when it's not reasonable store the whole iterator in memory
+e.g., large datasets etc.
 
-generators
-coroutines
-https://book.pythontips.com/en/latest/coroutines.html
+def get_fib(n):
+  a,b = 0,1
+  for i in range(n):
+    a, b = b, a+b
+  yield b
+
+n = 20
+for i in range(n+1):
+  print(f"{i}: {list(get_fib(i))}")
+
 
 
 enumerate
