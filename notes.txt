@@ -10,7 +10,7 @@ filter, map, reduce
 
 
 ###################################
-zip and unzip
+zip and unzip functions
 
 names = ['john', 'paul', 'dave']
 comps = ['small', 'medium', 'large']
@@ -39,8 +39,6 @@ for first_name, last_name, age in zip(first_name, last_name, age):
 
 
 
-
-
 collections
 https://book.pythontips.com/en/latest/collections.html
 - defaultdict
@@ -52,17 +50,36 @@ https://book.pythontips.com/en/latest/collections.html
 
 
 intertools
+- cartesian product
+- permutations 
+- combinations
+- accumulate
+- groupby
+- infinite iterators
+
 
 file operations
 https://book.pythontips.com/en/latest/open_function.html
 
+with open('photo.jpg', 'r+') as f:
+    jpgdata = f.read()
+The first argument of open is the filename. The second one (the mode) determines how the file gets opened.
+
+If you want to read the file, pass in r
+If you want to read and write the file, pass in r+
+If you want to overwrite the file, pass in w
+If you want to append to the file, pass in a
+
+
+
 exception handling
 https://book.pythontips.com/en/latest/exceptions.html
 
+
+
 debugging
 
-file manipulation
-https://book.pythontips.com/en/latest/open_function.html
+
 
 generators
 coroutines
@@ -73,6 +90,11 @@ enumerate
 https://book.pythontips.com/en/latest/enumerate.html
 
 data structures
+- lists
+- tuples
+- sets
+- dicts
+
 decorators
 https://book.pythontips.com/en/latest/decorators.html
 
@@ -83,8 +105,27 @@ https://book.pythontips.com/en/latest/function_caching.html
 context managers
 https://book.pythontips.com/en/latest/context_managers.html
 
+
+queues
+consumers and producers
+
 web scraping (beautiful soup)
 
+unit testing
+test driven development
+
+multi threading 
+multi processing
+asyncio
+
+ThreadPoolExecutor
+ProcessPoolExecutor
+
+https://stackoverflow.com/questions/27435284/multiprocessing-vs-multithreading-vs-asyncio-in-python-3
+https://medium.com/hackernoon/a-simple-introduction-to-pythons-asyncio-595d9c9ecf8c
+
+
+sockets
 
 webdev
 rest API 
