@@ -20,11 +20,11 @@ print(list2)
 odds = lambda x: x%2 == 1
 list1 = [1,2,3,4,5,6,7,8,9]
 list2 = list(filter(odds, list1))
+list2 = list(filter(lambda x: x%2 == 1, list1))
 print(list2)
 
 
 # using filter with 2 lists
-
 list1 = [0,1,2,3,4,5,6,7,8,9]
 list2 = [7, 8, 9]
 list(filter(lambda x: x in list1, list2))
@@ -88,6 +88,8 @@ dic1 = {
 { key:value for (key,value) in dic1.items() }
 
 
+a and b returns b if a is True, else returns a.
+a or b returns a if a is True, else returns b.
 
 
 ###################################
