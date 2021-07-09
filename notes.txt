@@ -1,4 +1,6 @@
 
+/home/ubuntu/snap/exercism/5/exercism/python/robot-name
+
 
 
 comprehensions
@@ -137,7 +139,7 @@ https://book.pythontips.com/en/latest/collections.html
 - enum.Enum
 
 
-intertools
+itertools
 - cartesian product
 - permutations 
 - combinations
