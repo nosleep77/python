@@ -12,7 +12,7 @@ time1 = Time()
 time2 = Time()
 
 time1.hours = 3
-time2.hours = 2
+time2.hours = 7
 
 print(time1.after(time2))
 

@@ -20,4 +20,4 @@ class Math:
 
 #Math(5) + Math(3)
 
-print(Math(7) == Math(99))
+print(Math(7) == Math(6))
