@@ -46,8 +46,13 @@ list2 = list(map(lambda x: x ** 2, list1))
 print(list2)
 
 ## typecasting with map
+# produces a list
 >>> list(map(int, "123"))
 [1, 2, 3]
+# can take a list
+>>> list(map(int, ["1","2","3"]))
+[1, 2, 3]
+
 
 ## lambda if boolean
 starts_with_J = lambda x: True if x.startswith('J') else False
@@ -133,6 +138,13 @@ for first_name, last_name, age in zip(first_name, last_name, age):
 # Thomas Fischer is 11 years old
 # Martin Walter is 36 years old
 # Charles Rogan is 83 years old
+
+
+## converts rows to columns in list
+b = [[89, 1903, 3], [18, 3, 1], [9, 4, 800]]
+list(zip(*b))
+# output
+[(89, 18, 9), (1903, 3, 4), (3, 1, 800)]
 
 
 data structures
