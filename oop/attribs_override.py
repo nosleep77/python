@@ -16,7 +16,7 @@ class Robot:
 
   @staticmethod
   def ranrobot():
-    return "a random robot"
+    return "latest 5.0"
 
 r1 = Robot("Jack","blue",45)
 r1.intro()
@@ -25,4 +25,4 @@ Robot.model = "T2000"
 
 print(f"model is {Robot.get_model()}")
 
-print(f"model is {r1.ranrobot()}")
+print(f"model is {Robot.ranrobot()}")
