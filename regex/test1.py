@@ -36,9 +36,20 @@ import re
 #pattern = "^[0-9]{3}$"
 #text = "222"
 
+## ISBN-10
+#pattern = "^\d(-|)\d{3}(-|)\d{5}(-|)(X|\d)$"
 
-pattern = "^\d(-|)\d{3}(-|)\d{5}(-|)(X|\d)$"
-text = "3-598-21507-X"
+# pattern = '^a...s$'
+# test_string = 'abyss'
+
+# pattern = '^a.*s$'
+# text = 'abds342#$4fsdss'
+
+pattern = "[0-39]"
+text = "9"
+
+#text = "3-598-21507-X"
+#text = "359821507X"
 
 x = re.search(pattern, text)
 print(x)

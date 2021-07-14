@@ -9,13 +9,6 @@ lambda
 filter, map, reduce
 
 
-list1 = [1,2,3,4,5,6,7,8,9]
-list2 = list(filter(lambda x: x%2 == 0, list1))
-IS SAME AS 
-list2 = [*filter(lambda x: x%2 == 0, list1)]
-print(list2)
-
-
 ## filter and map will do the interation
 
 ## use filter for BOOLEAN return
@@ -23,6 +16,13 @@ odds = lambda x: x%2 == 1
 list1 = [1,2,3,4,5,6,7,8,9]
 list2 = list(filter(odds, list1))
 list2 = list(filter(lambda x: x%2 == 1, list1))
+print(list2)
+
+
+list1 = [1,2,3,4,5,6,7,8,9]
+list2 = list(filter(lambda x: x%2 == 0, list1))
+IS SAME AS 
+list2 = [*filter(lambda x: x%2 == 0, list1)]
 print(list2)
 
 
@@ -54,6 +54,22 @@ print(list2)
 [1, 2, 3]
 
 
+n = [4,3,2,1]
+list(filter(lambda x: x>2, n))
+OR
+print([x for x in n if x>2])
+
+
+from functools import reduce
+n = [4,3,2,1]
+print(reduce(lambda x,y: x*y, n))
+
+list1 = [1,2,3,4,5,6,7,8,9]
+list1 = [1,2,3,4]
+from functools import reduce
+reduce(lambda x,y: x+y, list1)
+
+
 ## lambda if boolean
 starts_with_J = lambda x: True if x.startswith('J') else False
 
@@ -67,24 +83,60 @@ OR
 print([x**2 for x in n])
 
 
-n = [4,3,2,1]
-list(filter(lambda x: x>2, n))
-OR
-print([x for x in n if x>2])
 
 
-from functools import reduce
-n = [4,3,2,1]
-print(reduce(lambda x,y: x*y, n))
-
-
-## LIST comprehensions
+## LIST COMPREHENSIONS
 ######################
 
 list1 = [1,2,3,4,5,6,7,8,9]
+list2 = ['a', 'b']
 [ x for x in list1 if x%2 == 1 ]
 [ x for x in list1 for b in list1 if x%2==0 ]
 [ b for x in list1 for b in list1 if x%2==0 ]
+
+[ x for x in list1 for x in list1 ]
+
+[ item for item in list1 if item%2==1 ]
+
+
+## double list comprehensions
+list1 = [1,2,3,4]
+list2 = ['a', 'b', 'c', 'd']
+
+## for each element of list1, print all elements of list1
+>>> [ x for x in list1 for x in list1 ]
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+
+## the first for loop is behaving as counter only
+>>> [ x for x in list1 for x in list1 ]
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+
+## returning c (list1) each element would repeast 4x (no. of elements in list2)
+>>> [ c for c in list1 for x in list2 ]
+[1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4]
+
+## returning x (list2) loop thru whole list2 for each element of list1
+>>> [ x for c in list1 for x in list2 ]
+['a', 'b', 'c', 'd', 'a', 'b', 'c', 'd', 'a', 'b', 'c', 'd', 'a', 'b', 'c', 'd']
+
+## nested lists
+>>> [ [c for c in list1] for x in list2 ]
+[[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
+
+
+>>> [ x for x in list2 for x in list1 ]
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+
+>>> [ x for x in list2 for c in list1 ]
+['a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd']
+
+>>> [ x for c in list2 for x in list1 ]
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+
+>>> [ c for c in list2 for x in list1 ]
+['a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd']
+
+
 
 
 ## nested list comprehensions with nested lists
@@ -96,12 +148,7 @@ matrix_string = "89 1903 3\n18 3 1\n9 4 800"
 [[89, 1903, 3], [18, 3, 1], [9, 4, 800]]
 
 
-list1 = [1,2,3,4,5,6,7,8,9]
-list1 = [1,2,3,4]
-from functools import reduce
-reduce(lambda x,y: x+y, list1)
 
-[ item for item in list1 if item%2==1 ]
 
 
 dic1 = {

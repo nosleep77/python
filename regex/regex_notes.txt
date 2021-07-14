@@ -18,3 +18,6 @@ $	  Ends with	                                                                  
 |	  Either or	                                                                  "falls|stays"	
 ()	Capture and group	 
 
+
+https://towardsdatascience.com/a-very-easy-tutorial-to-learn-python-regular-expression-re-c42fbbc01ef2
+
