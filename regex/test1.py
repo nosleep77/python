@@ -37,7 +37,9 @@ import re
 #text = "222"
 
 ## ISBN-10
-#pattern = "^\d(-|)\d{3}(-|)\d{5}(-|)(X|\d)$"
+#pattern = r"^\d(-|)\d{3}(-|)\d{5}(-|)(X|\d)$"
+#text = "3-598-21507-X"
+#text = "359821507X"
 
 # pattern = '^a...s$'
 # test_string = 'abyss'
@@ -45,11 +47,18 @@ import re
 # pattern = '^a.*s$'
 # text = 'abds342#$4fsdss'
 
-pattern = "[0-39]"
-text = "9"
+# pattern = "[0-39]"
+# text = "9"
 
-#text = "3-598-21507-X"
-#text = "359821507X"
 
-x = re.search(pattern, text)
+#pattern = r"\AWho.*\s\d+"
+# pattern = r"\w+"
+# text = "Who is there far 0123"
+
+# #x = re.search(pattern, text)
+# x = re.split(pattern, text)
+# print(x)
+
+txt = "The rain in Spain"
+x = re.search(r"ra?", txt)
 print(x)

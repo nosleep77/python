@@ -21,3 +21,21 @@ $	  Ends with	                                                                  
 
 https://towardsdatascience.com/a-very-easy-tutorial-to-learn-python-regular-expression-re-c42fbbc01ef2
 
+
+
+
+# pattern = r"\w+"
+# text = "Who is there far 0123"
+# x = re.findall(pattern, text)
+# print(x)
+## output
+# ['Who', 'is', 'there', 'far', '0123']
+
+# pattern = r"\w+"
+# text = "Who is there far 0123"
+# x = re.search(pattern, text)
+# print(x)
+## output
+# <re.Match object; span=(0, 3), match='Who'>
+
+
