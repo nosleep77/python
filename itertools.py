@@ -1,6 +1,8 @@
 # itertools
 # product, permutations, combinations, accumulate, groupby, infinite iterators
 
+## also see library: more_itertools
+
 # cartesian product
 '''
 from itertools import product
