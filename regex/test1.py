@@ -59,6 +59,13 @@ import re
 # x = re.split(pattern, text)
 # print(x)
 
-txt = "The rain in Spain"
-x = re.search(r"ra?", txt)
+# txt = "The rain in Spain"
+# x = re.search(r"ra?", txt)
+# print(x)
+
+## phone number
+#pattern = r"^[^0-1]\d\d[^0-1]\d{6}$"   ## 10 dig
+pattern = r"^1[^0-1]\d\d[^0-1]\d{6}$"   ## 11 dig
+text = "13239567895"
+x = re.search(pattern, text)
 print(x)

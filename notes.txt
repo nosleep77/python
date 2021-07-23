@@ -1,6 +1,7 @@
 
 /home/ubuntu/snap/exercism/5/exercism/python/robot-name
 
+/home/ubuntu/python_training/git/training/exercism
 
 
 comprehensions

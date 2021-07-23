@@ -16,6 +16,15 @@ class PhoneNumber:
     if not re.search(pattern, self.number):
       raise ValueError("something is wrong with ph num")
 
+    # if len(n) < 10 or len(n) > 11:
+    #   raise ValueError("incorrect length")
+
+    # if len(n) == 11 and (n[0] != "1" or int(n[1]) < 2 or int(n[4]) < 2):
+    #   raise ValueError("something wrong. check area code, exchange code.")
+
+    # if len(n) == 10 and (int(n[0]) < 2 or int(n[3]) < 2):
+    #   raise ValueError("something wrong. check area code, exchange code.")
+
     return self.number
 
   def pretty(self):
