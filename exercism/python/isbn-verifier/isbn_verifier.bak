@@ -1,0 +1,42 @@
+import re
+
+def is_valid(isbn):
+  
+  pattern = r"^\d(-|)\d{3}(-|)\d{5}(-|)(X|\d)$"
+  #isbn1 = str(isbn.replace("-",""))
+  
+  isbn1 = list(str(isbn.replace("-","")))
+
+  if isbn1[-1] == "X":
+    isbn1[-1] = "10" 
+  
+  d = sum([ (int(isbn1[a])*(10-a)) for a in range(len(isbn1)) ])
+
+  return True if d%11==0 else False
+
+  # if "X" in isbn1 and not isbn1.endswith("X"):
+  #   return False
+
+  # if any(c.isalpha() for c in isbn1.replace("X", "")):
+  #   return False
+
+  # if len(isbn1) != 10:
+  #   return False
+
+  # if not re.search(pattern, isbn):
+  #   return False
+
+# transalte to X to 10
+  # c = 0
+  # for a in range(len(isbn1)):
+  #   if isbn1[a] == "X":
+  #     c += ((10-a)*10)
+  #   else:
+  #     c += (int(isbn1[a])*(10-a))
+
+  #d = [ ((10-a)*10) for a in range(len(isbn1)) if isbn1[a] == "X" ]
+
+  #return True if c%11==0 else False
+
+
+print(is_valid("359821507X"))
