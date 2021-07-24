@@ -64,8 +64,9 @@ import re
 # print(x)
 
 ## phone number
-#pattern = r"^[^0-1]\d\d[^0-1]\d{6}$"   ## 10 dig
-pattern = r"^1[^0-1]\d\d[^0-1]\d{6}$"   ## 11 dig
+#pattern = r"^[^0-1]\d\d[^0-1]\d{6}$"   
+#pattern = r"^1[^0-1]\d\d[^0-1]\d{6}$"   
+
 text = "13239567895"
 x = re.search(pattern, text)
 print(x)
