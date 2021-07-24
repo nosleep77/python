@@ -15,12 +15,15 @@ def recite(start_verse, end_verse):
     12: ["twelfth", "twelve Drummers Drumming, "],
   }
 
+  # if start_verse == end_verse:
+  #   return [getlines(end_verse,days,startline(end_verse,days))]
+  # else:
   return [getlines(n,days,startline(n,days)) for n in range(start_verse,end_verse+1)]
 
 def startline(n,days):
-   return f"On the {days[n][0]} day of Christmas my true love gave to me: "
+  return f"On the {days[n][0]} day of Christmas my true love gave to me: "
 
 def getlines(n,days,begin):
-  return "".join([begin, "".join([days[a][1] for a in range(n,1-1,-1)])])
-
-
+  lines = [days[a][1] for a in range(n,1-1,-1)]
+  lines = "".join(lines)
+  return "".join([begin, lines])
