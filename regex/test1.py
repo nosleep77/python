@@ -67,6 +67,51 @@ import re
 #pattern = r"^[^0-1]\d\d[^0-1]\d{6}$"   
 #pattern = r"^1[^0-1]\d\d[^0-1]\d{6}$"   
 
-text = "13239567895"
-x = re.search(pattern, text)
+# text = "13239567895"
+# x = re.search(pattern, text)
+# print(x)
+
+
+
+
+#text = "''hey''"
+#text = "Joe can't tell between 'large' and large."
+
+
+
+#pattern = r"\w+'?\w?[^']"
+#pattern = r"[a-zA-Z0-9]+'?[a-zA-Z0-9]?[^']"
+#pattern = r"[a-zA-Z0-9]+'?[a-zA-Z0-9]?[^'_, ]"
+#pattern = r"[a-zA-Z0-9]+'?[a-zA-Z0-9]?[^'_,:! \.]?"
+#pattern = r"[a-zA-Z0-9]+'?[a-zA-Z0-9]?"
+# x = re.findall(pattern, text)
+# print(x)
+
+
+# removeSpecialChars = text.translate ({ord(c): " " for c in "!@#$%^&*()[]{};:,./<>?\|`~-=_+"})
+# print(removeSpecialChars)
+
+
+#text = "Joe can't tell between app, apple and a."
+#text = "hey,my_spacebar_is_broken"
+#text = "testing, 1, 2 testing"
+#text = "one fish two fish red fish blue fish"
+#text = "one,\ntwo,\nthree"
+#text = "car: carpet as java: javascript!!&@$%^&"
+#text = "go Go GO Stop stop"
+#text = "First: don't laugh. Then: don't cry."
+#text = " multiple   whitespaces"
+#text = ",\n,one,\n ,two \n 'three'"
+#text = "''hey''"
+#text = "Joe can't tell between 'large' and large."
+
+#pattern = r"[a-zA-Z0-9]+'?[a-zA-Z0-9]?[^'_,:! \.]?"
+#pattern = r"[a-zA-Z0-9]+'?[a-zA-Z0-9]?"
+#pattern = r'\w+\'?\w*'
+#pattern = r"[a-zA-Z0-9]+(?:'[a-zA-Z0-9])?[^'_,:! \.]?"
+#pattern = r"[a-zA-Z0-9]+(?:'[a-zA-Z0-9])?"
+pattern = r"[a-z0-9]+(?:'[a-z0-9])?"
+
+x = re.findall(pattern, text.lower())
 print(x)
+
