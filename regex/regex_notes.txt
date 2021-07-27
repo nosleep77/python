@@ -39,3 +39,14 @@ https://towardsdatascience.com/a-very-easy-tutorial-to-learn-python-regular-expr
 # <re.Match object; span=(0, 3), match='Who'>
 
 
+
+That's because of the part of your pattern for words with 
+an apostrophe in them. '?[a-zA-Z0-9]? allows for both the 
+postrophe or the alphanumeric character after to be independently 
+present or not. If you do not want to include the apostrophes 
+at the end of words, then use a non-capturing group so that 
+apostrophe plus alphanumeric character can either present together or both missing:
+
+pattern = r"[a-zA-Z0-9]+(?:'[a-zA-Z0-9])?[^'_,:! \.]?"
+
+# here the non-capturing group is (?:'[a-zA-Z0-9])
