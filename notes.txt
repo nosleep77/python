@@ -126,21 +126,6 @@ list2 = ['a', 'b', 'c', 'd']
 [[1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4], [1, 2, 3, 4]]
 
 
->>> [ x for x in list2 for x in list1 ]
-[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
-
->>> [ x for x in list2 for c in list1 ]
-['a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd']
-
->>> [ x for c in list2 for x in list1 ]
-[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
-
->>> [ c for c in list2 for x in list1 ]
-['a', 'a', 'a', 'a', 'b', 'b', 'b', 'b', 'c', 'c', 'c', 'c', 'd', 'd', 'd', 'd']
-
-
-
-
 ## nested list comprehensions with nested lists
 matrix_string = "89 1903 3\n18 3 1\n9 4 800"
 # passes each iterator result of nested list comp to start list comp
@@ -150,6 +135,16 @@ matrix_string = "89 1903 3\n18 3 1\n9 4 800"
 [[89, 1903, 3], [18, 3, 1], [9, 4, 800]]
 
 
+
+## list comprehensions with dictionary
+## alternate solution
+# compressed_scores = {1: "AEIOULNRST", 2: "DG",
+#                      3: "BCMP", 4: "FHVWY", 5: "K", 8: "JX", 10: "QZ"}
+# score_for = {char: score for score, chars in compressed_scores.items()
+#              for char in chars}
+# def score(word):
+#     word = word.upper()
+#     return sum(score_for[letter] for letter in word)
 
 
 
