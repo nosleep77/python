@@ -4,6 +4,21 @@
 /home/ubuntu/python_training/git/training/exercism
 
 
+
+variable assignments on slice
+a = [0,1,2,3,4]
+a[:2] = [5]*2
+>>> a
+[5, 5, 2, 3, 4]
+
+create a list of Trues
+a = [True] * 5
+
+
+
+if a is (None or 0) or a > limit:
+
+
 comprehensions
 list, dict, set, generator
 lambda
