@@ -36,15 +36,15 @@ class LargestSeriesProductTest(unittest.TestCase):
     def test_reports_zero_if_all_spans_include_zero(self):
         self.assertEqual(largest_product("99099", 3), 0)
 
-    def test_rejects_span_longer_than_string_length(self):
-        with self.assertRaisesWithMessage(ValueError):
-            largest_product("123", 4)
-
     def test_reports_1_for_empty_string_and_empty_product_0_span(self):
         self.assertEqual(largest_product("", 0), 1)
 
     def test_reports_1_for_nonempty_string_and_empty_product_0_span(self):
         self.assertEqual(largest_product("123", 0), 1)
+
+    def test_rejects_span_longer_than_string_length(self):
+        with self.assertRaisesWithMessage(ValueError):
+            largest_product("123", 4)
 
     def test_rejects_empty_string_and_nonzero_span(self):
         with self.assertRaisesWithMessage(ValueError):

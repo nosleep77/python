@@ -1,6 +1,9 @@
 import re
 
-atbash = "abcdefghijklmnopqrstuvwxyz",
+atbash = [
+  "abcdefghijklmnopqrstuvwxyz",
+  "zyxwvutsrqponmlkjihgfedcba"
+]
 
 def encode(plain_text):
   
