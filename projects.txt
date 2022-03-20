@@ -17,7 +17,7 @@ Project
 - mySQL and PostgreSQL
 
 Project
-- web scraping
+- web scraping (beautifulsoup)
 - data mining
 
 Project
