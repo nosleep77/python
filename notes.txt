@@ -333,9 +333,18 @@ https://book.pythontips.com/en/latest/enumerate.html
 2 grapes
 3 pear
 
+# another way
+>>> for a in enumerate(my_list):
+...  print(a)
+...
+(0, 'apple')
+(1, 'banana')
+(2, 'grapes')
+(3, 'pear')
 
 
-## args ##
+
+## *args ##
 def f(*args):
   b = 0
   for a in args:
