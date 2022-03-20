@@ -31,4 +31,9 @@ d['a'] = 1
 d['b'] = 2
 d['c'] = 3
 
+# check key that exists
+print(d['c'])
+
+# check key that does not exist - no error
 print(d['d'])
+
