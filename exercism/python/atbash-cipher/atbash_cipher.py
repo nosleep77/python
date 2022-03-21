@@ -22,3 +22,4 @@ def decode(ciphered_text):
 
 
 print(encode("Testing,1 2 3, testing."))
+
