@@ -43,3 +43,49 @@ Enter num: 42
 (blank input entered here)
 >>> response
 ''
+
+## only 2 tries allowed (limit)
+>>> response = pyip.inputNum(limit=2, default='N/A')
+hello
+'hello' is not a number.
+world
+'world' is not a number.
+>>> response
+'N/A
+
+
+## regex
+>>> import pyinputplus as pyip
+>>> response = pyip.inputNum(allowRegexes=[r'(I|V|X|L|C|D|M)+', r'zero'])
+XLII
+>>> response
+'XLII'
+>>> response = pyip.inputNum(allowRegexes=[r'(i|v|x|l|c|d|m)+', r'zero'])
+xlii
+>>> response
+'xlii
+
+>>> import pyinputplus as pyip
+>>> response = pyip.inputNum(blockRegexes=[r'[02468]$'])
+42
+This response is invalid.Input Validation 193
+44
+This response is invalid.
+43
+>>> response
+43
+
+
+
+>>> import pyinputplus as pyip
+>>> response = pyip.inputStr(allowRegexes=[r'caterpillar', 'category'],
+blockRegexes=[r'cat'])
+cat
+This response is invalid.
+catastrophe
+This response is invalid.
+category
+>>> response
+'category'
+
+
