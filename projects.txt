@@ -19,6 +19,7 @@ Project
 Project
 - web scraping (beautifulsoup)
 - data mining
+- requests library
 
 Project
 - web apps
@@ -27,6 +28,7 @@ Project
 - flask
 
 Project
+- numpy and pandas
 - ML
 - sci-kit
 - tensorflow
